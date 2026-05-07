@@ -1,0 +1,65 @@
+.section { background: var(--d); padding: 100px 6%; }
+
+.header {
+  text-align: center; margin-bottom: 60px;
+  opacity: 0; transform: translateY(22px); transition: all 0.7s ease;
+}
+.header.headerVisible { opacity: 1; transform: translateY(0); }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--y); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+}
+.label::before { content: ''; width: 20px; height: 2px; background: var(--y); border-radius: 1px; }
+
+.sectionTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800; line-height: 1.13; margin-bottom: 14px;
+}
+.sub { color: var(--gm); font-size: 0.975rem; max-width: 480px; margin: 0 auto; line-height: 1.75; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; max-width: 1100px; margin: 0 auto;
+}
+
+.card {
+  position: relative; overflow: hidden;
+  background: var(--d2); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 36px 30px;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.35s, box-shadow 0.35s;
+  cursor: default;
+}
+.card.visible { opacity: 1; transform: translateY(0); }
+.card:hover { border-color: rgba(245,196,0,0.18); box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+
+.topLine {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  transition: transform 0.4s ease;
+}
+
+.iconWrap {
+  width: 60px; height: 60px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 22px; transition: all 0.35s ease;
+}
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;
+  transition: color 0.3s;
+}
+.desc { color: var(--gm); font-size: 0.9rem; line-height: 1.75; }
+
+.bgNum {
+  position: absolute; bottom: -10px; right: 10px;
+  font-family: 'Syne', sans-serif; font-size: 8rem; font-weight: 900;
+  line-height: 1; pointer-events: none; user-select: none;
+  transition: color 0.3s;
+}
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; max-width: 480px; } }
+@media (max-width: 600px) { .section { padding: 70px 5%; } }

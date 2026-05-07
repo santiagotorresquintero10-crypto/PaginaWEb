@@ -1,0 +1,92 @@
+.section {
+  background: var(--d); padding: 100px 6%;
+  position: relative; overflow: hidden;
+}
+.bgLine {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px; background: linear-gradient(180deg, transparent, rgba(245,196,0,0.12), transparent);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 70px; align-items: start;
+  max-width: 1200px; margin: 0 auto;
+}
+
+/* Left */
+.headWrap {
+  margin-bottom: 32px;
+  opacity: 0; transform: translateY(20px); transition: all 0.7s ease;
+}
+.headWrap.headVisible { opacity: 1; transform: translateY(0); }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--y); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px;
+}
+.label::before { content: ''; width: 20px; height: 2px; background: var(--y); border-radius: 1px; }
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800; line-height: 1.1; margin-bottom: 18px;
+}
+.accent { color: var(--y); }
+.intro { color: var(--gm); font-size: 0.95rem; line-height: 1.78; }
+
+.imgCard {
+  border-radius: 18px; overflow: hidden; position: relative;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  aspect-ratio: 4/3;
+}
+.img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.imgOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+}
+.imgBadge {
+  position: absolute; bottom: 18px; left: 18px;
+  background: var(--y); color: #111;
+  padding: 8px 16px; border-radius: 100px;
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 0.78rem;
+}
+
+/* Right: policy points */
+.points { display: flex; flex-direction: column; gap: 28px; padding-top: 4px; }
+
+.point {
+  display: flex; gap: 20px; align-items: flex-start;
+  opacity: 0; transform: translateX(24px); transition: all 0.65s ease;
+}
+.point.pointVisible { opacity: 1; transform: translateX(0); }
+
+.pointNum {
+  font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+  color: rgba(245,196,0,0.2); line-height: 1; flex-shrink: 0;
+  width: 48px; text-align: center;
+}
+.pointContent { flex: 1; }
+.pointBar { height: 2px; width: 40px; background: var(--y); border-radius: 1px; margin-bottom: 10px; }
+.pointText { color: var(--gm); font-size: 0.93rem; line-height: 1.78; }
+
+/* Quote card */
+.quoteCard {
+  background: linear-gradient(135deg, rgba(245,196,0,0.08) 0%, rgba(245,196,0,0.03) 100%);
+  border: 1px solid rgba(245,196,0,0.18);
+  border-radius: 16px; padding: 24px 26px; margin-top: 12px;
+}
+.quoteIcon { font-size: 3rem; color: var(--y); font-family: Georgia, serif; line-height: 1; margin-bottom: 6px; }
+.quoteText { color: #fff; font-size: 0.95rem; line-height: 1.75; font-style: italic; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+  .bgLine { display: none; }
+}
+@media (max-width: 600px) {
+  .section { padding: 70px 5%; }
+  .pointNum { font-size: 1.5rem; width: 36px; }
+}

@@ -1,0 +1,56 @@
+.footer {
+  background: var(--d2); border-top: 1px solid var(--gb);
+  padding: 60px 6% 28px;
+}
+.top {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 48px; max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+
+.brand p { color: var(--g); font-size: 0.845rem; line-height: 1.75; margin-top: 12px; max-width: 230px; }
+
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
+}
+.logoIcon {
+  width: 30px; height: 30px; background: var(--y);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+}
+.logoIcon svg { width: 16px; height: 16px; }
+
+.socials { display: flex; gap: 10px; margin-top: 18px; }
+.socBtn {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--gb);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gm); transition: all 0.25s;
+}
+.ig:hover { background: #E1306C; border-color: #E1306C; color: #fff; transform: translateY(-3px); }
+.fb:hover { background: #1877F2; border-color: #1877F2; color: #fff; transform: translateY(-3px); }
+.tk:hover { background: #69C9D0; border-color: #69C9D0; color: #fff; transform: translateY(-3px); }
+.wa:hover { background: #25D366; border-color: #25D366; color: #fff; transform: translateY(-3px); }
+
+.col h4 { font-weight: 700; font-size: 0.875rem; margin-bottom: 16px; }
+.col ul { list-style: none; }
+.col ul li { margin-bottom: 10px; }
+.col ul li a { color: var(--g); font-size: 0.825rem; transition: color 0.2s; }
+.col ul li a:hover { color: var(--y); }
+
+.bottom {
+  border-top: 1px solid var(--gb); padding-top: 22px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; max-width: 1200px; margin: 0 auto;
+}
+.bottom p { color: var(--g); font-size: 0.76rem; }
+.legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.legal a { color: var(--g); font-size: 0.76rem; transition: color 0.2s; }
+.legal a:hover { color: var(--gm); }
+
+@media (max-width: 900px) {
+  .top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .top { grid-template-columns: 1fr; }
+  .bottom { flex-direction: column; text-align: center; }
+}

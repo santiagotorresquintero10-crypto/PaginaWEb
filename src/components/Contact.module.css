@@ -1,0 +1,87 @@
+.section { background: var(--d); }
+.inner {
+  display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px;
+  align-items: start; max-width: 1100px; margin: 0 auto;
+}
+
+.info { opacity: 0; transform: translateX(-18px); transition: all 0.7s ease; }
+.info.visible { opacity: 1; transform: translateX(0); }
+.sub { color: var(--gm); line-height: 1.78; margin-bottom: 32px; max-width: 380px; }
+
+.detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+.detailIco {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: var(--yg); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; color: var(--y);
+}
+.detailLbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--g); font-weight: 600; margin-bottom: 2px; }
+.detailVal { font-weight: 600; font-size: 0.88rem; }
+
+.socialsLabel { font-size: 0.72rem; font-weight: 700; color: var(--gm); text-transform: uppercase; letter-spacing: 0.1em; margin: 24px 0 12px; }
+.socials { display: flex; gap: 10px; margin-bottom: 28px; }
+
+.socBtn {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--gb);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gm); transition: all 0.25s;
+}
+.ig:hover { background: #E1306C; border-color: #E1306C; color: #fff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(225,48,108,0.45); }
+.fb:hover { background: #1877F2; border-color: #1877F2; color: #fff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(24,119,242,0.45); }
+.tk:hover { background: #69C9D0; border-color: #69C9D0; color: #fff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(105,201,208,0.45); }
+.wa:hover { background: #25D366; border-color: #25D366; color: #fff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+
+.mapWrap { border-radius: var(--r); overflow: hidden; border: 1px solid var(--gb); height: 200px; }
+.mapWrap iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.85) hue-rotate(180deg); }
+
+/* Form */
+.formWrap {
+  background: var(--d2); border: 1px solid var(--gb);
+  border-radius: var(--rl); padding: 38px 34px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+  opacity: 0; transform: translateX(18px); transition: all 0.7s ease 0.15s;
+}
+.formWrap.visible { opacity: 1; transform: translateX(0); }
+.form { display: flex; flex-direction: column; gap: 0; }
+.formRow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.fGroup { margin-bottom: 16px; }
+.fGroup label {
+  display: block; font-size: 0.73rem; font-weight: 700;
+  color: var(--gm); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 7px;
+}
+
+.input {
+  width: 100%; background: var(--d3);
+  border: 1px solid var(--gb); border-radius: 10px;
+  padding: 12px 15px; color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 0.9rem;
+  outline: none; transition: all 0.2s; resize: none;
+  -webkit-appearance: none;
+}
+.input::placeholder { color: var(--g); }
+.input.focused { border-color: var(--y); box-shadow: 0 0 0 3px rgba(245,196,0,0.1); }
+.fGroup textarea.input { height: 110px; }
+
+.submit {
+  width: 100%; background: var(--y); color: var(--d);
+  border: none; border-radius: 10px; padding: 15px;
+  font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; transition: all 0.25s;
+  box-shadow: 0 0 30px rgba(245,196,0,0.22);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 4px;
+}
+.submit:hover { background: var(--yb); transform: translateY(-2px); box-shadow: 0 0 45px rgba(245,196,0,0.4); }
+.submit.sent { background: #22C55E; box-shadow: 0 0 30px rgba(34,197,94,0.3); }
+.note { text-align: center; font-size: 0.73rem; color: var(--g); margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .info { transform: none; }
+  .formWrap { transform: none; }
+}
+@media (max-width: 520px) {
+  .formRow { grid-template-columns: 1fr; }
+  .formWrap { padding: 28px 22px; }
+}

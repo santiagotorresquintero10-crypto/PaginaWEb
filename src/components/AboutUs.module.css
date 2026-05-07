@@ -1,0 +1,120 @@
+.section { background: var(--d2); padding: 100px 6%; }
+
+.inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 70px; align-items: center;
+  max-width: 1200px; margin: 0 auto;
+}
+
+/* Image side */
+.imgWrap {
+  position: relative;
+  opacity: 0; transform: translateX(-24px);
+  transition: all 0.75s ease;
+}
+.imgWrap.visible { opacity: 1; transform: translateX(0); }
+
+.imgCard {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  aspect-ratio: 4/3;
+  position: relative;
+}
+.img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.imgOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+}
+
+/* Floating badge */
+.floatBadge {
+  position: absolute; top: -20px; right: -20px;
+  background: var(--y); border-radius: 16px;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 20px 40px rgba(245,196,0,0.35);
+  animation: floatY 4s ease-in-out infinite;
+}
+.floatBadgeIcon {
+  width: 36px; height: 36px;
+  background: rgba(0,0,0,0.15); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.floatBadgeNum { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--d); line-height: 1; }
+.floatBadgeLbl { font-size: 0.65rem; color: rgba(0,0,0,0.6); font-weight: 600; }
+
+/* Mini stats */
+.miniStats {
+  position: absolute; bottom: -20px; left: -20px;
+  background: var(--d3); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 16px 20px;
+  display: flex; gap: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+}
+.miniStat { text-align: center; }
+.miniNum { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--y); display: block; line-height: 1; }
+.miniLbl { font-size: 0.65rem; color: var(--gm); display: block; margin-top: 3px; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* Text side */
+.content {
+  opacity: 0; transform: translateX(24px);
+  transition: all 0.75s ease 0.15s;
+}
+.content.visible { opacity: 1; transform: translateX(0); }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--y); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px;
+}
+.label::before { content: ''; width: 20px; height: 2px; background: var(--y); border-radius: 1px; }
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800; line-height: 1.13; margin-bottom: 22px;
+}
+.accent { color: var(--y); }
+
+.text {
+  color: var(--gm); font-size: 0.97rem; line-height: 1.8;
+  margin-bottom: 16px;
+}
+.text strong { color: #fff; font-weight: 700; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 32px; }
+.pill {
+  background: rgba(245,196,0,0.09); border: 1px solid rgba(245,196,0,0.2);
+  color: var(--y); font-size: 0.75rem; font-weight: 600;
+  padding: 5px 14px; border-radius: 100px;
+}
+
+.btn {
+  background: var(--y); color: var(--d);
+  padding: 13px 28px; border-radius: 10px;
+  font-weight: 700; font-size: 0.9rem; font-family: 'Manrope', sans-serif;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s; box-shadow: 0 0 30px rgba(245,196,0,0.25);
+  width: fit-content;
+}
+.btn:hover { background: var(--yb); transform: translateY(-2px); box-shadow: 0 0 45px rgba(245,196,0,0.4); }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 60px; }
+  .imgWrap { transform: none; }
+  .content { transform: none; }
+  .floatBadge { top: -14px; right: -10px; }
+  .miniStats { bottom: -14px; left: -10px; }
+}
+@media (max-width: 480px) {
+  .section { padding: 70px 5%; }
+  .floatBadge { position: relative; top: auto; right: auto; margin-top: 16px; border-radius: 12px; }
+  .miniStats { position: relative; bottom: auto; left: auto; margin-top: 10px; border-radius: 12px; }
+}

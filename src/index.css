@@ -1,0 +1,38 @@
+/* ── Google Fonts loaded in index.html ── */
+:root {
+  --y: #F5C400;
+  --yb: #FFD700;
+  --yg: rgba(245, 196, 0, 0.13);
+  --d: #111214;
+  --d2: #1A1C20;
+  --d3: #22252B;
+  --g: #6B7280;
+  --gm: #9CA3AF;
+  --gb: rgba(255, 255, 255, 0.08);
+  --gl: rgba(255, 255, 255, 0.05);
+  --r: 16px;
+  --rl: 22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--d);
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { display: block; }
+a { text-decoration: none; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--d); }
+::-webkit-scrollbar-thumb { background: var(--y); border-radius: 2px; }
+
+/* Shared section layout */
+section { padding: 100px 6%; }
+
+@media (max-width: 768px) {
+  section { padding: 72px 5%; }
+}

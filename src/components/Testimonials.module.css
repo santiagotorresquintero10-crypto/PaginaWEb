@@ -1,0 +1,73 @@
+.section { background: var(--d2); }
+.inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center; max-width: 1200px; margin: 0 auto;
+}
+
+.left { opacity: 0; transform: translateX(-20px); transition: all 0.7s ease; }
+.left.visible { opacity: 1; transform: translateX(0); }
+
+.sub { color: var(--gm); font-size: 0.955rem; line-height: 1.78; margin-bottom: 26px; max-width: 400px; }
+
+.avatarRow { display: flex; align-items: center; margin-bottom: 26px; flex-wrap: wrap; gap: 8px; }
+.mini {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 2px solid var(--d2); object-fit: cover; position: relative;
+}
+.avatarLbl { margin-left: 8px; color: var(--gm); font-size: 0.82rem; }
+
+.shuffleBtn {
+  background: transparent; border: 1px solid var(--y); color: var(--y);
+  padding: 11px 22px; border-radius: 10px;
+  font-weight: 700; font-size: 0.875rem; font-family: 'Manrope', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.shuffleBtn:hover { background: var(--y); color: var(--d); }
+
+/* Stack */
+.stackWrap { display: flex; justify-content: center; align-items: center; }
+.stack {
+  position: relative; width: 320px; height: 420px; margin-left: 50px;
+}
+
+/* Individual card */
+.card {
+  position: absolute; left: 0; top: 0;
+  width: 320px; height: 420px;
+  border-radius: 20px; padding: 26px;
+  border: 1px solid rgba(245,196,0,0.18);
+  background: linear-gradient(135deg, rgba(34,37,43,0.97) 0%, rgba(26,28,32,0.93) 100%);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  backdrop-filter: blur(20px);
+  user-select: none;
+  display: flex; flex-direction: column;
+  will-change: transform;
+}
+.front {
+  cursor: grab; box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 50px rgba(245,196,0,0.08);
+}
+.front:active { cursor: grabbing; }
+
+.stars { color: var(--y); font-size: 0.82rem; letter-spacing: 3px; margin-bottom: 16px; }
+.quote { font-size: 2.4rem; color: var(--y); font-family: Georgia, serif; line-height: 1; margin-bottom: 8px; }
+.text { color: var(--gm); font-size: 0.875rem; line-height: 1.75; font-style: italic; flex: 1; }
+.foot { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 2px solid rgba(245,196,0,0.3); object-fit: cover; flex-shrink: 0;
+}
+.name { font-weight: 700; font-size: 0.88rem; }
+.role { font-size: 0.73rem; color: var(--gm); }
+.hint { font-size: 0.64rem; color: rgba(245,196,0,0.45); text-align: right; margin-top: 8px; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 50px; }
+  .stackWrap { justify-content: flex-start; }
+  .stack { margin-left: 0; }
+  .left { transform: none; }
+}
+@media (max-width: 420px) {
+  .stack { width: 290px; }
+  .card { width: 290px; }
+}

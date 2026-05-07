@@ -1,0 +1,17 @@
+.btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 300;
+  width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+  animation: floatWA 3s ease-in-out infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
+}
+.btn svg { width: 28px; height: 28px; }
+.btn:hover { transform: scale(1.12); box-shadow: 0 12px 38px rgba(37,211,102,0.6); }
+
+@keyframes floatWA {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.btn:hover { animation: none; transform: scale(1.12); }

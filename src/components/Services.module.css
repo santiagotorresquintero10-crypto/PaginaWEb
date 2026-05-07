@@ -1,0 +1,68 @@
+.section { background: var(--d2); padding: 100px 6%; }
+
+.header {
+  text-align: center; margin-bottom: 60px;
+  opacity: 0; transform: translateY(22px); transition: all 0.7s ease;
+}
+.header.headerVisible { opacity: 1; transform: translateY(0); }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--y); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+}
+.label::before { content: ''; width: 20px; height: 2px; background: var(--y); border-radius: 1px; }
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800; line-height: 1.13; margin-bottom: 14px;
+}
+.sub { color: var(--gm); font-size: 0.95rem; max-width: 480px; margin: 0 auto; line-height: 1.75; }
+
+/* 3D folder grid */
+.folderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1200px; margin: 0 auto 60px;
+  justify-items: center;
+}
+
+/* Extra services */
+.extraWrap {
+  max-width: 1000px; margin: 0 auto;
+  background: rgba(17,18,20,0.6);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 32px 36px;
+}
+.extraTitle {
+  font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+  color: var(--y); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.extraTitle::before { content: ''; width: 16px; height: 2px; background: var(--y); border-radius: 1px; }
+
+.extraGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+.extraItem {
+  display: flex; align-items: flex-start; gap: 10px;
+  color: var(--gm); font-size: 0.875rem; line-height: 1.5;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03); border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.25s;
+}
+.extraItem:hover { border-color: rgba(245,196,0,0.2); color: #fff; background: rgba(245,196,0,0.04); }
+.extraItem svg { flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 768px) {
+  .section { padding: 70px 5%; }
+  .folderGrid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .extraWrap { padding: 24px 20px; }
+}
+@media (max-width: 480px) {
+  .folderGrid { grid-template-columns: 1fr; max-width: 280px; }
+}

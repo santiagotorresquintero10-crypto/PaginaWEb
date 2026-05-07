@@ -1,0 +1,24 @@
+.wrap {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  margin-bottom: 56px;
+}
+.visible { opacity: 1; transform: translateY(0); }
+.center { text-align: center; }
+.center .sub { margin: 0 auto; }
+
+.label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--y); font-size: 0.73rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+}
+.label::before {
+  content: ''; width: 20px; height: 2px;
+  background: var(--y); border-radius: 1px;
+}
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800; line-height: 1.13; margin-bottom: 14px;
+}
+.sub { color: var(--gm); font-size: 0.975rem; line-height: 1.75; max-width: 500px; }
