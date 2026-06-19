@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import AboutUs from './components/AboutUs.jsx'
@@ -26,6 +27,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <SpeedInsights />
     </>
   )
 }
